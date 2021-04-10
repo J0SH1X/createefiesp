@@ -27,7 +27,7 @@ sudo mount -o loop,rw efiesp.img ./mount
 
 
 #Wait for user to fill the esp folder with needed files
-read  -n 1 -p "Press any Key to continue" mainmenuinput
+read  -n 1 -p "Now copy your bootloader and kernel to esp folder and press any Key to continue" mainmenuinput
 
 #Copy the esp files into the image
 sudo cp -r esp/* mount/
