@@ -5,7 +5,7 @@ DIR=mount
 DIR2=esp
 
 #Create the empty image
-dd if=/dev/zero of=efiesp.img bs=1M count=$BOOT_SIZE
+dd if=/dev/zero of=efiesp.img bs=1M count="$BOOT_SIZE"
 
 #Format as fat32
 mkfs.vfat efiesp.img
@@ -27,7 +27,7 @@ sudo mount -o loop,rw efiesp.img ./mount
 
 
 #Wait for user to fill the esp folder with needed files
-read  -n 1 -p "Now copy your bootloader and kernel to esp folder and press any Key to continue" mainmenuinput
+read -r -n 1 -p "Now copy your bootloader and kernel to esp folder and press any Key to continue"
 
 #Copy the esp files into the image
 sudo cp -r esp/* mount/
